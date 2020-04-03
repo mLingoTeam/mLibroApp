@@ -75,3 +75,22 @@ nav{
 .button-mlibro:hover{
   background-color: #c62171;
 }
+.formular--container{
+  height: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type=text]:focus{
+  border-bottom: 1px solid #e84393 !important;
+  -webkit-box-shadow: 0 1px 0 0 solid #e84393 !important;
+  box-shadow: 0 1px 0 0 #e84393 !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #e84393;
+  box-shadow: 0 1px 0 0 #e84393;
+}
+.input-field input[type=text]:focus + label {
+  color: #e84393 !important;
+}
