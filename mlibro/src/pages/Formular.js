@@ -12,6 +12,10 @@ class Formular extends React.Component{
     render(){
         return(
             <div className="formular--container col m12">
+                <div>
+                <h2>Welcome in mLibro</h2>
+                <h4>Sign in to your librus account</h4>
+                </div>
                 <div className="container col m12">
                     <div className="row">
                         <form className="col s12 m12">
