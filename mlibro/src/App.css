@@ -32,3 +32,7 @@
 nav{
   background-color: #e84393 !important;
 }
+
+.sidenav-trigger{
+  font-size: 28px;
+}
