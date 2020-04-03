@@ -5,8 +5,8 @@ class Formular extends React.Component{
     constructor(){
         super();
         this.state={
-            "username":"",
-            "password": ""
+            "username":"Kochamy Librusa",
+            "password": "Librus"
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -20,19 +20,19 @@ class Formular extends React.Component{
     login() {
 
             const {username, password} = this.state;
-            console.log(username, password);
 
             const requestOptions = {
-            method: "POST",
+            method: "GET",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })
             };
 
 
-            return fetch(`https://mlibro-api.herokuapp.com/get_assingments`, requestOptions)
+            return fetch(`https://obscure-depths-75684.herokuapp.com/` + `https://mlibro-api.herokuapp.com/get_assingments`, requestOptions)
             .then(result => result.json())
             .then(result => console.log(result))
-
+            // if coorect
+            //localStoraget.setItem("username", username)
 
     }
 
@@ -48,20 +48,20 @@ class Formular extends React.Component{
                         <form className="col s12 m12">
                             <div className="row">
                                 <div className="input-field col s12">
-                                <input id="username" type="text" className="validate" name="username" value={this.state.username} onChange={this.handleChange}/>
+                                <input id="username" type="text" className="validate" name="username" value={this.state.username}/>
                                 <label for="username">Username</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s12">
-                                <input id="password" type="password" className="validate" name="password" value={this.state.password} onChange={this.handleChange}/>
+                                <input id="password" type="password" className="validate" name="password" value={this.state.password} />
                                 <label for="password">Password</label>
                             </div>
                         </div>
                         </form>
                     </div>
                 </div>
-                <button className="button-mlibro" onClick={this.login}>Sign in by librus</button>
+                <Link className="button-mlibro" to="/zadania">Sign in by librus</Link>
             </div>
         )
     }

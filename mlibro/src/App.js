@@ -12,7 +12,7 @@ function App() {
     <Router>
         <div className="App">
           <Route exact path="/" component={Formular}/>
-          <Route  path="/zadania" component={Mainpage}/>
+          <Route exact path="/zadania" component={Mainpage}/>
           <Route path="/zadania/:task_id" component={Taskpage}/>
         </div>
     </Router>
