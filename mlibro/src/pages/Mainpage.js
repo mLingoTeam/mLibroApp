@@ -8,7 +8,6 @@ const Mainpage = () => {
     return(
         <Layout>
             <div className="row">
-                <h2>Obecne zadania</h2>
             {assingments.map(
             (element) => {
                 return (
