@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import {FaHamburger} from 'react-icons/fa'
 
 const Header = () => {
@@ -6,20 +7,20 @@ const Header = () => {
         <div className="header">
                 <nav className="navbar-fixed">
                     <div className="nav-wrapper container">
-                    <a href="#!" className="brand-logo">mLibro</a>
+                    <Link to="/" className="brand-logo">mLibro</Link>
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><FaHamburger/></a>
                     <ul className="right hide-on-med-and-down">
-                        <li><a href="sass.html">Today</a></li>
-                        <li><a href="badges.html">All</a></li>
-                        <li><a href="collapsible.html">mLingo Team</a></li>
+                        <li><Link to="/#today">Today</Link></li>
+                        <li><Link to="/">All</Link></li>
+                        <li><Link to="/#mlingo">mLingo Team</Link></li>
                     </ul>
                     </div>
                 </nav>
 
                 <ul className="sidenav" id="mobile-demo">
-                        <li><a href="sass.html">Today</a></li>
-                        <li><a href="badges.html">All</a></li>
-                        <li><a href="collapsible.html">mLingo Team</a></li>
+                        <li><Link to="/#today">Today</Link></li>
+                        <li><Link to="/">All</Link></li>
+                        <li><Link to="/#mLingo">mLingo Team</Link></li>
                 </ul>
         </div>
     )

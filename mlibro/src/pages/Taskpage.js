@@ -13,10 +13,7 @@ class Taskpage extends React.Component {
 
    componentDidMount(){
        let id = this.props.match.params.task_id
-       console.log(id)
        const find = assingments.find( el => el.id == id)
-
-       console.log(find)
 
         this.setState((state)=>{
             return{
@@ -28,7 +25,7 @@ class Taskpage extends React.Component {
 
    render(){
 
-       return ( this.state.loading  ? (
+       return ( this.state.loading === true  ? (
         <Layout>
             <div>
                 ...loading
