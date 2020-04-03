@@ -5,7 +5,7 @@ const Header = () => {
     return(
         <div className="header">
                 <nav className="navbar-fixed">
-                    <div className="nav-wrapper ">
+                    <div className="nav-wrapper container">
                     <a href="#!" className="brand-logo">Logo</a>
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><FaHamburger/></a>
                     <ul className="right hide-on-med-and-down">

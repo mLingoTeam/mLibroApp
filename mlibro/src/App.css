@@ -1,3 +1,6 @@
+*{
+  font-family: 'Barlow Condensed', sans-serif;
+}
 .App{
   color: #dfdfdf;
 }
@@ -20,4 +23,12 @@
   color: #e84393;
 
   flex-direction: column;
+}
+
+.header{
+  background-color: #e84393 !important;
+}
+
+nav{
+  background-color: #e84393 !important;
 }
