@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class Formular extends React.Component{
     constructor(){
@@ -9,14 +10,33 @@ class Formular extends React.Component{
         }
 
         this.handleChange = this.handleChange.bind(this);
+        this.login = this.login.bind(this);
     }
 
     handleChange(event) {
         this.setState({ [event.target.name]: event.target.value });
-      }
+    }
+
+    login() {
+
+            const {username, password} = this.state;
+            console.log(username, password);
+
+            const requestOptions = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+            };
+
+
+            return fetch(`https://mlibro-api.herokuapp.com/get_assingments`, requestOptions)
+            .then(result => result.json())
+            .then(result => console.log(result))
+
+
+    }
 
     render(){
-        console.log(this.state)
         return(
             <div className="formular--container col m12">
                 <div>
@@ -41,6 +61,7 @@ class Formular extends React.Component{
                         </form>
                     </div>
                 </div>
+                <button className="button-mlibro" onClick={this.login}>Sign in by librus</button>
             </div>
         )
     }

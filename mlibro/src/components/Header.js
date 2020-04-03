@@ -10,17 +10,17 @@ const Header = () => {
                     <Link to="/" className="brand-logo">mLibro</Link>
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><FaHamburger/></a>
                     <ul className="right hide-on-med-and-down">
-                        <li><Link to="/#today">Today</Link></li>
-                        <li><Link to="/">All</Link></li>
-                        <li><Link to="/#mlingo">mLingo Team</Link></li>
+                        <li><Link to="/zadania">Today</Link></li>
+                        <li><Link to="/zadania">All</Link></li>
+                        <li><Link to="/zadania">mLingo Team</Link></li>
                     </ul>
                     </div>
                 </nav>
 
                 <ul className="sidenav" id="mobile-demo">
-                        <li><Link to="/#today">Today</Link></li>
-                        <li><Link to="/">All</Link></li>
-                        <li><Link to="/#mLingo">mLingo Team</Link></li>
+                        <li><Link to="/zadania">Today</Link></li>
+                        <li><Link to="/zadania">All</Link></li>
+                        <li><Link to="/zadania">mLingo Team</Link></li>
                 </ul>
         </div>
     )

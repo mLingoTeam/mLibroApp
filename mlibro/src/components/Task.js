@@ -14,7 +14,7 @@ const Task = ({props}) => {
                 <li className="collection-item">Od: {data_zadania}</li>
                 <li className="collection-item">Do: {termin_oddania}</li>
             </ul>
-            <Link className="button-mlibro" to="/"><MdChevronLeft/></Link>
+            <Link className="button-mlibro" to="/zadania"><MdChevronLeft/></Link>
         </div>
     )
 }
