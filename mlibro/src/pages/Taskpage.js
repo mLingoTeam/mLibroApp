@@ -4,11 +4,13 @@ import {assingments} from '../data.json'
 import Task from '../components/Task';
 import Layout from '../layouts/Layout'
 
+
 class Taskpage extends React.Component {
 
     constructor(){
         super();
         this.state = { zadanie: {}, loading: true }
+
     }
 
    componentDidMount(){
@@ -24,6 +26,10 @@ class Taskpage extends React.Component {
    }
 
    render(){
+
+    if(!localStorage.getItem("status")){
+        this.props.history.push("/")
+    }
 
        return ( this.state.loading === true  ? (
         <Layout>

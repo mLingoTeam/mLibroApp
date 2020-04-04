@@ -3,8 +3,11 @@ import Layout from '../layouts/Layout'
 import TaskCard from '../components/TaskCard';
 import {assingments} from '../data.json';
 
-const Mainpage = () => {
+const Mainpage = (props) => {
 
+    if(!localStorage.getItem("status")){
+        props.history.push("/")
+    }
 
     return(
         <Layout>
