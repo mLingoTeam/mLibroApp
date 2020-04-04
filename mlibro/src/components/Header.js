@@ -33,7 +33,7 @@ class Header extends React.Component {
                         <ul className="right hide-on-med-and-down">
                             <li><Link to="/today">Today</Link></li>
                             <li><Link to="/zadania">All</Link></li>
-                            <li><a href="https://github.com/orgs/mLingoTeam/teams" target="blank">mLingo Team</a></li>
+                            <li><a href="https://github.com/mLingoTeam" target="blank">mLingo Team</a></li>
                             <li><Link to="/" className="signout tooltipped active" data-tooltip="Remember to log out!" onClick={this.clearStorage}>Sign out</Link></li>
                         </ul>
                         </div>
@@ -43,7 +43,7 @@ class Header extends React.Component {
                             <li><a className="sidenav-close"><FaHamburger onClick={this.show}/></a></li>
                             <li><Link to="/today">Today</Link></li>
                             <li><Link to="/zadania">All</Link></li>
-                            <li><a href="https://github.com/orgs/mLingoTeam/teams" target="blank">mLingo Team</a></li>
+                            <li><a href="https://github.com/mLingoTeam" target="blank">mLingo Team</a></li>
                             <li><Link to="/" className="signout "onClick={this.clearStorage}>Sign out</Link></li>
 
 
