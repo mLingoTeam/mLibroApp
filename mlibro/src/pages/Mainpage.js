@@ -7,7 +7,7 @@ class Mainpage extends React.Component {
     constructor(){
         super();
         if(!localStorage.getItem("status")){
-            props.history.push("/")
+            this.props.history.push("/")
         }
     }
 
