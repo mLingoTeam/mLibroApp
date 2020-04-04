@@ -17,6 +17,7 @@ class Header extends React.Component {
         localStorage.removeItem('status');
         localStorage.removeItem('today');
         localStorage.removeItem('all');
+        this.props.history.push("/");
         window.location.reload();
     }
 
@@ -44,7 +45,7 @@ class Header extends React.Component {
                             <li><Link to="/today">Today</Link></li>
                             <li><Link to="/zadania">All</Link></li>
                             <li><a href="https://github.com/mLingoTeam" target="blank">mLingo Team</a></li>
-                            <li><Link to="/" className="signout "onClick={this.clearStorage}>Sign out</Link></li>
+                            <li><button className="signout "onClick={this.clearStorage}>Sign out</button></li>
 
 
                     </ul>
