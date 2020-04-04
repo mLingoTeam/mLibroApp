@@ -2,12 +2,12 @@ import React from 'react';
 import Layout from '../layouts/Layout'
 import TaskCard from '../components/TaskCard';
 
-class Mainpage extends React.Component {
+class Todaypage extends React.Component {
 
     constructor(){
         super();
         if(!localStorage.getItem("status")){
-            props.history.push("/")
+            this.props.history.push("/")
         }
     }
 
@@ -16,7 +16,7 @@ class Mainpage extends React.Component {
             <Layout>
                 <div className="row">
                 {
-                JSON.parse(localStorage.getItem("all")).map(
+                    JSON.parse(localStorage.getItem("today")).map(
                 (element) => {
                     return (
                             <TaskCard props={element}/>
@@ -29,4 +29,4 @@ class Mainpage extends React.Component {
     }
 }
 
-export default Mainpage;
+export default Todaypage;

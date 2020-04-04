@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import {FaHamburger} from 'react-icons/fa'
-import M from 'materialize-css'
 
 class Header extends React.Component {
 
@@ -15,8 +14,9 @@ class Header extends React.Component {
     }
 
     clearStorage = () =>{
-        localStorage.removeItem('status')
-        localStorage.removeItem('tasks')
+        localStorage.removeItem('status');
+        localStorage.removeItem('today');
+        localStorage.removeItem('all');
         window.location.reload();
     }
 
@@ -31,7 +31,7 @@ class Header extends React.Component {
                         <Link to="/" className="brand-logo">mLibro</Link>
                         <a href="#" data-target="mobile-demo" className="sidenav-trigger" onClick={this.show}><FaHamburger/></a>
                         <ul className="right hide-on-med-and-down">
-                            <li><Link to="/zadania">Today</Link></li>
+                            <li><Link to="/today">Today</Link></li>
                             <li><Link to="/zadania">All</Link></li>
                             <li><Link to="/zadania">mLingo Team</Link></li>
                             <li><Link to="/" className="signout tooltipped active" data-tooltip="Remember to log out!" onClick={this.clearStorage}>Sign out</Link></li>
@@ -41,7 +41,7 @@ class Header extends React.Component {
 
                     <ul className="sidenav" id="mobile-demo">
                             <li><a className="sidenav-close"><FaHamburger onClick={this.show}/></a></li>
-                            <li><Link to="/zadania">Today</Link></li>
+                            <li><Link to="/today">Today</Link></li>
                             <li><Link to="/zadania">All</Link></li>
                             <li><Link to="/zadania">mLingo Team</Link></li>
                             <li><Link to="/" className="signout "onClick={this.clearStorage}>Sign out</Link></li>
