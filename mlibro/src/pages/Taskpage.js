@@ -1,6 +1,5 @@
 
 import React from 'react';
-import {assingments} from '../data.json'
 import Task from '../components/Task';
 import Layout from '../layouts/Layout'
 
@@ -14,8 +13,11 @@ class Taskpage extends React.Component {
     }
 
    componentDidMount(){
-       let id = this.props.match.params.task_id
-       const find = assingments.find( el => el.id == id)
+       let id = this.props.match.params.task_id;
+       let assingments = JSON.parse(localStorage.getItem("today"));
+       let assingments2 = JSON.parse(localStorage.getItem("all"));
+       let assingments3 = [...assingments, ...assingments2];
+       const find = assingments3.find( el => el.id == id)
 
         this.setState((state)=>{
             return{

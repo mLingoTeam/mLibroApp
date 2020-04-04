@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 const Task = ({props}) => {
 
     const {przedmiot, tytul, tresc, data_zadania, termin_oddania, id} = props;
-
     return(
         <div className="task--card">
             <ul className="collection with-header">
