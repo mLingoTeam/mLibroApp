@@ -16,6 +16,7 @@ class Header extends React.Component {
 
     clearStorage = () =>{
         localStorage.removeItem('status')
+        localStorage.removeItem('tasks')
         window.location.reload();
     }
 
@@ -33,7 +34,7 @@ class Header extends React.Component {
                             <li><Link to="/zadania">Today</Link></li>
                             <li><Link to="/zadania">All</Link></li>
                             <li><Link to="/zadania">mLingo Team</Link></li>
-                            <li><a className="signout tooltipped active" data-tooltip="Remember to log out!" onClick={this.clearStorage}>Sign out</a></li>
+                            <li><Link to="/" className="signout tooltipped active" data-tooltip="Remember to log out!" onClick={this.clearStorage}>Sign out</Link></li>
                         </ul>
                         </div>
                     </nav>
@@ -43,7 +44,7 @@ class Header extends React.Component {
                             <li><Link to="/zadania">Today</Link></li>
                             <li><Link to="/zadania">All</Link></li>
                             <li><Link to="/zadania">mLingo Team</Link></li>
-                            <li><a className="signout "onClick={this.clearStorage}>Sign out</a></li>
+                            <li><Link to="/" className="signout "onClick={this.clearStorage}>Sign out</Link></li>
 
 
                     </ul>

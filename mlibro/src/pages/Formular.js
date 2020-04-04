@@ -32,7 +32,7 @@ class Formular extends React.Component{
 
 
             return fetch(`https://obscure-depths-75684.herokuapp.com/` + `https://mlibro-api.herokuapp.com/get_assingments`, requestOptions)
-            .then(result => { return { data: result.json(), status: result }})
+            .then(result => { return { data: JSON.stringify(result), status: result }})
 
             }
         }
@@ -44,11 +44,22 @@ class Formular extends React.Component{
                 loading: true
             })
 
-            const response = await this.login();
-            if(response.status.ok){
+
+            const data = await this.login();
+
+            //const {zadania} = data;
+
+            console.log(JSON.stringify(data))
+            console.log(await JSON.stringify(data))
+            console.log(await data)
+            console.log(await data.na_dzisiaj)
+            console.log(await data.pozostale)
+            console.log(await JSON.stringify(data.response))
+            if(data.status.ok){
                     localStorage.setItem('status', 'logged');
+                    //localStorage.setItem('tasks', await data.zadania)
             }
-            else if(!response.status.ok){
+            else if(!data.status.ok){
                 alert("Niepoprawny login lub hasło!")
             }
 
