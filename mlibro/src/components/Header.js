@@ -5,21 +5,23 @@ import {FaHamburger} from 'react-icons/fa'
 class Header extends React.Component {
 
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.show = function(e){
             document.getElementById('mobile-demo').classList.toggle('mobile-demo-active');
         }
+        this.clearStorage = async () =>
+        {
+            await localStorage.removeItem('status');
+            await localStorage.removeItem('today');
+            await localStorage.removeItem('all');
+            this.props.history.push("/");
+            window.location.reload();
+        }
     }
 
-    clearStorage = () =>{
-        localStorage.removeItem('status');
-        localStorage.removeItem('today');
-        localStorage.removeItem('all');
-        this.props.history.push("/");
-        window.location.reload();
-    }
+
 
 
 
@@ -35,7 +37,7 @@ class Header extends React.Component {
                             <li><Link to="/today">Today</Link></li>
                             <li><Link to="/zadania">All</Link></li>
                             <li><a href="https://github.com/mLingoTeam" target="blank">mLingo Team</a></li>
-                            <li><Link to="/" className="signout tooltipped active" data-tooltip="Remember to log out!" onClick={this.clearStorage}>Sign out</Link></li>
+                            <li><a className="signout tooltipped active" data-tooltip="Remember to log out!" onClick={this.clearStorage}>Sign out</a></li>
                         </ul>
                         </div>
                     </nav>
@@ -45,7 +47,7 @@ class Header extends React.Component {
                             <li><Link to="/today">Today</Link></li>
                             <li><Link to="/zadania">All</Link></li>
                             <li><a href="https://github.com/mLingoTeam" target="blank">mLingo Team</a></li>
-                            <li><button className="signout "onClick={this.clearStorage}>Sign out</button></li>
+                            <li><a className="signout "onClick={this.clearStorage}>Sign out</a></li>
 
 
                     </ul>

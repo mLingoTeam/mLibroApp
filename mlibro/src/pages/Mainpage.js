@@ -4,8 +4,8 @@ import TaskCard from '../components/TaskCard';
 
 class Mainpage extends React.Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         if(!localStorage.getItem("status")){
             this.props.history.push("/")
         }
@@ -13,7 +13,7 @@ class Mainpage extends React.Component {
 
     render(){
         return(
-            <Layout>
+            <Layout history={this.props.history}>
                 <div className="row">
                 {
                 JSON.parse(localStorage.getItem("all")).map(
