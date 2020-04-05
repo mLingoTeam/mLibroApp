@@ -53,7 +53,7 @@ class Formular extends React.Component{
             const resolved_data = Promise.resolve(data);
 
             if(!data.message){
-                    localStorage.setItem('status', 'logged');
+                    resolved_data.then(e=> localStorage.setItem('status', e.token));
                     resolved_data.then(e=> localStorage.setItem('today', JSON.stringify(e.zadania.na_dzisiaj)));
                     resolved_data.then(e=> localStorage.setItem('all', JSON.stringify(e.zadania.pozostale)));
             }
@@ -80,7 +80,7 @@ class Formular extends React.Component{
                     <div>
                 {
                     this.state.loading === true ?<div className="formular--container col m12"> <FaCog className="spin"/> </div>:
-                <div className="formular--container col m12">
+                <div className="formular--container col m12 container">
                     <div>
                     <h2>Witaj w Mlibro</h2>
                     <h4>Wygodne sprawdzanie zadań domowych!</h4>
