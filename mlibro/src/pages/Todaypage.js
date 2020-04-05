@@ -1,12 +1,14 @@
 import React from 'react';
 import Layout from '../layouts/Layout'
 import TaskCard from '../components/TaskCard';
+import req from '../req/req'
 
 class Todaypage extends React.Component {
 
     constructor(props){
         super(props);
 
+        req.setTasks();
     }
 
     render(){

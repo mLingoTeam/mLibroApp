@@ -1,11 +1,14 @@
 import React from 'react';
 import Layout from '../layouts/Layout'
 import TaskCard from '../components/TaskCard';
+import req from '../req/req'
 
 class Mainpage extends React.Component {
 
     constructor(props){
         super(props);
+
+        req.setTasks();
     }
 
     render(){
