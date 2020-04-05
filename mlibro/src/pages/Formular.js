@@ -82,8 +82,9 @@ class Formular extends React.Component{
                     this.state.loading === true ?<div className="formular--container col m12"> <FaCog className="spin"/> </div>:
                 <div className="formular--container col m12">
                     <div>
-                    <h2>Welcome in mLibro</h2>
-                    <h4>Sign in to your librus account</h4>
+                    <h2>Witaj w Mlibro</h2>
+                    <h4>Wygodne sprawdzanie zadań domowych!</h4>
+                    <h4>Zaloguj się za pomocą twojego konta Librus</h4>
                     </div>
                     <div className="container col m12">
                         <div className="row">
@@ -91,19 +92,19 @@ class Formular extends React.Component{
                                 <div className="row">
                                     <div className="input-field col s12">
                                     <input id="username" type="text" className="validate" name="username" value={this.state.username} onChange={this.handleChange}/>
-                                    <label for="username">Username</label>
+                                    <label for="username">Login Librus</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
                                     <input id="password" type="password" className="validate" name="password" value={this.state.password} onChange={this.handleChange}/>
-                                    <label for="password">Password</label>
+                                    <label for="password">Hasło Librus</label>
                                 </div>
                             </div>
                             </form>
                         </div>
                     </div>
-                    <button className="button-mlibro" onClick={this.loginSystem}>Sign in by librus</button>
+                    <button className="button-mlibro" onClick={this.loginSystem}>Zaloguj się za pomocą Librusa</button>
                 </div>
              }
         </div>

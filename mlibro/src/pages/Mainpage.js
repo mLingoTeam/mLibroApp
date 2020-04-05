@@ -6,17 +6,19 @@ class Mainpage extends React.Component {
 
     constructor(props){
         super(props);
-        if(!localStorage.getItem("status")){
-            this.props.history.push("/")
-        }
     }
 
     render(){
+        if(!localStorage.getItem("status")){
+            this.props.history.push("/")
+            return <div>you logged out, refresh the page if you see this</div>;
+        }
+        const tasks = [ ...JSON.parse(localStorage.getItem("today")), ...JSON.parse(localStorage.getItem("all"))];
         return(
             <Layout history={this.props.history}>
                 <div className="row">
                 {
-                JSON.parse(localStorage.getItem("all")).map(
+                tasks.map(
                 (element) => {
                     return (
                             <TaskCard props={element}/>

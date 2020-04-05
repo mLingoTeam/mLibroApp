@@ -4,14 +4,16 @@ import TaskCard from '../components/TaskCard';
 
 class Todaypage extends React.Component {
 
-    constructor(){
-        super();
-        if(!localStorage.getItem("status")){
-            this.props.history.push("/")
-        }
+    constructor(props){
+        super(props);
+
     }
 
     render(){
+        if(!localStorage.getItem("status")){
+            this.props.history.push("/")
+            return <div>you logged out, refresh the page if you see this</div>;
+        }
         return(
             <Layout>
                 <div className="row">

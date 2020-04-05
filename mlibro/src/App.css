@@ -83,6 +83,9 @@ nav{
   justify-content: center;
   align-items: center;
 }
+.formular--container h4, .formular--container h2{
+  text-align: center;
+}
 input[type=text]:focus{
   border-bottom: 1px solid #e84393 !important;
   -webkit-box-shadow: 0 1px 0 0 solid #e84393 !important;
