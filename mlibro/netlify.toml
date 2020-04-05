@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/zadania"
+  to = "/"
+
+[[redirects]]
+  from = "/today"
+  to = "/"
+
+  [[redirects]]
+  from = "/zadania/*"
+  to = "/"
