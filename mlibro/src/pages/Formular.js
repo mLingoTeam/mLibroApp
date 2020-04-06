@@ -33,6 +33,10 @@ class Formular extends React.Component{
 
             return fetch(`https://obscure-depths-75684.herokuapp.com/` + `https://mlibro-api.herokuapp.com/get_assingments`, requestOptions)
             .then(function(response) {
+
+                if(response.status == 403){
+                    return false;
+                }
                 return response.json();
               }).then(function(data) {
                 return data
@@ -50,19 +54,19 @@ class Formular extends React.Component{
 
 
             const data = await this.login();
-            const resolved_data = Promise.resolve(data);
-
-            if(!data.message){
-                    resolved_data.then(e=> localStorage.setItem('status', e.token));
-                    resolved_data.then(e=> localStorage.setItem('today', JSON.stringify(e.zadania.na_dzisiaj)));
-                    resolved_data.then(e=> localStorage.setItem('all', JSON.stringify(e.zadania.pozostale)));
+            if(data == false){
+                alert("Niepoprawny login lub hasło!");
             }
-            else if(data.message){
-                alert("Niepoprawny login lub hasło!")
+            else{
+                        const resolved_data = Promise.resolve(data);
+
+                        resolved_data.then(e=> localStorage.setItem('status', e.token));
+                        resolved_data.then(e=> localStorage.setItem('today', JSON.stringify(e.zadania.na_dzisiaj)));
+                        resolved_data.then(e=> localStorage.setItem('all', JSON.stringify(e.zadania.pozostale)));
             }
 
 
-              setTimeout(() => {
+            setTimeout(() => {
                 this.setState({
                   ...this.state,
                   loading: false
@@ -79,7 +83,7 @@ class Formular extends React.Component{
         return(
                     <div>
                 {
-                    this.state.loading === true ?<div className="formular--container col m12"> <FaCog className="spin"/> </div>:
+                    this.state.loading === true ? <div className="formular--container col m12"> <FaCog className="spin"/> </div>:
                 <div className="formular--container col m12 container">
                     <div>
                     <h2>Witaj w Mlibro</h2>
