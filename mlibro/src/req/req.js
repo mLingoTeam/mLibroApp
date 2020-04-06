@@ -17,7 +17,7 @@ const req = {
 
         return fetch(`https://obscure-depths-75684.herokuapp.com/` + `https://mlibro-api.herokuapp.com/refresh`, requestOptions)
         .then(function(response) {
-          if(response.status == 403){
+          if(response.status == 403 || response.status == 500){
             return false;
         }
             return response.json();
