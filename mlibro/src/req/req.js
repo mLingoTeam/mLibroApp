@@ -31,11 +31,16 @@ const req = {
         const data = await getTasks();
         if(data == false){
           alert("Token Wygasl!");
-          return;
-      }
-        const resolved_data = Promise.resolve(data);
-        resolved_data.then(e=> localStorage.setItem('today', JSON.stringify(e.zadania.na_dzisiaj)));
-        resolved_data.then(e=> localStorage.setItem('all', JSON.stringify(e.zadania.pozostale)));
+            await localStorage.removeItem('status');
+            await localStorage.removeItem('today');
+            await localStorage.removeItem('all');
+            window.location.reload();
+        }
+        else{
+          const resolved_data = Promise.resolve(data);
+          resolved_data.then(e=> localStorage.setItem('today', JSON.stringify(e.zadania.na_dzisiaj)));
+          resolved_data.then(e=> localStorage.setItem('all', JSON.stringify(e.zadania.pozostale)));
+        }
     }
 
     export default req;
