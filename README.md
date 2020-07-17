@@ -1,8 +1,14 @@
-# mLibroAPI
-RESTful API for mLibroApp
+# mLibro
+
+![Project Image](https://github.com/mLingoTeam/mLibroApp/blob/master/mlibroscreen.png)
+
+---
+
+# mLibroApp
+The frontend of mLibroApp
 
 # What is mLibro?
-Along with my friend Kacper here at mLingoTeam we were quite frustrated on how bad synergia.librus.pl is. Since covid-19 appeared and
+Along with my friend Michał here at mLingoTeam we were quite frustrated on how bad synergia.librus.pl is. Since covid-19 appeared and
 e-learning started we had to use it to get information about our homework. It was not pleasant process.
 We came forward for our fellow students and created mLibro. mLibro is proxy to librus that presents your homework in nice and readable
 way.
@@ -17,6 +23,8 @@ Features:
 * [ ] Calendar
 * [ ] Google calendar synchronization
 
+---
+
 # Technologies
 
 ### Backend
@@ -25,6 +33,8 @@ Features:
 
 ### Frontend
 * React.js
+
+---
 
 # Try it out
 https://mlibro.netlify.com
