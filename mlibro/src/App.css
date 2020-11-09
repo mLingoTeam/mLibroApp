@@ -5,6 +5,32 @@
   color: #dfdfdf;
 }
 
+h5 {
+  color: #e84393;
+}
+
+.calendar-container{
+  margin: 0 auto;
+}
+
+.calendar-cell {
+  font-size: 20px;
+  color: #e84393 !important;
+  min-width: 100px;
+}
+
+.cell-selected {
+  border: 3px solid #e84393;
+}
+
+.small-btn-nav {
+  color: #e84393 !important;
+}
+
+.small-btn-nav:hover{
+  cursor: pointer;
+}
+
 .taskcard{
   min-height: 240px;
   background-color: #2d3436 !important;
@@ -23,6 +49,10 @@
   color: #e84393;
 
   flex-direction: column;
+}
+
+.center-text {
+  text-align: center !important;
 }
 
 .header{
